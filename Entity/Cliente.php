@@ -22,6 +22,17 @@ class Cliente{
                 'email' => $this->email
             ]
         );
-        return true;
+        if($result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public static function buscar($where=null,$order=null,$limit=null){
+        return (new Database('cliente'))->select()->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function excluir($id){
+        return (new Database('cliente'))->delete('id = '.$id);
     }
 }
