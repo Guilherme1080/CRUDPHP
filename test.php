@@ -1,12 +1,24 @@
 <?php
-
-$array = ['sobrenome', 'email', 'telefone'];
-var_dump(implode(",", $array)); // string(24) "sobrenome,email,telefone"
-
-// String vazia ao usar um array vazio:
-var_dump(implode('olá', [])); // string(0) ""
-
-// O separador é opcional:
-var_dump(implode(['a', 'b', 'c'])); // string(3) "abc"
-
-?>
+$dados =  array(
+    [
+        "id" => 1,
+        "nome" => "Ana Patricia",
+        "fone" => "(67) 982178621",
+        "email" => "anapatricia@gmail.com"
+    ],
+    [
+        "id" => 2,
+        "nome" => "Leandro",
+        "fone" => "(67) 996494429",
+        "email" => "leandro@gmail.com"
+    ],
+    [
+        "id" => 3,
+        "nome" => "Marcos",
+        "fone" => "(67) 984568712",
+        "email" => "marcos@gmail.com"
+    ]
+);
+for ($i = 0; $i < count($dados); $i++) {
+    echo " $i: " . $dados[$i] . "<br>";
+}
