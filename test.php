@@ -20,5 +20,8 @@ $dados =  array(
     ]
 );
 for ($i = 0; $i < count($dados); $i++) {
-    echo " $i: " . $dados[$i] . "<br>";
+    echo $dados[$i]["id"] . "<br>";
+    echo $dados[$i]["nome"] . "<br>";
+    echo $dados[$i]["fone"] . "<br>";
+    echo $dados[$i]["email"] . "<br>";
 }
