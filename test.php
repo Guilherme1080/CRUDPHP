@@ -1,7 +1,5 @@
 <?php
 
-
-
 $array = ['sobrenome', 'email', 'telefone'];
 var_dump(implode(",", $array)); // string(24) "sobrenome,email,telefone"
 
