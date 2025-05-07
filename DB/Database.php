@@ -2,10 +2,10 @@
 
 class Database{
     public $conn;
-    public string $local="10.38.0.125";
+    public string $local="localhost";
     public string $db="crudphp";
-    public string $user = "devweb";
-    public string $password = "suporte@22";
+    public string $user = "root";
+    public string $password = "";
     public $table;
 
 
@@ -21,13 +21,13 @@ class Database{
             //echo "Conectado com Sucesso!!";
         } catch (PDOException $err) {
             //retirar msg em produção
-            die("Connection Failed: " . $err->getMessage());
+            die("ERRO DE CONEXAO: " . $err->getMessage());
         }
     }
 
     
     public function execute($query,$binds = []){
-        //BINDS = parametros
+        //BINDS = SELECT 
         try{
             $stmt = $this->conn->prepare($query);
             $stmt->execute($binds);
@@ -40,19 +40,11 @@ class Database{
 
     public function insert($values){
         //DEBUG
-        //echo "<pre>";print_r($values);echo "</pre>";
-        //Dados query $fields=campos $binds=parametros
         $fields = array_keys($values);
-        //$data = array_values($values); TESTE DE RECEBIMENTO
         $binds = array_pad([],count($fields),'?');
 
         //Montar query
         $query = 'INSERT INTO ' . $this->table .'  (' .implode(',',$fields). ') VALUES (' .implode(',',$binds).')';
-        //DEBUG para saber se está montando a query corretamente
-        // print_r($query);
-        // print_r(array_values($values));
-        
-        //Método para executar a Query
         $result = $this->execute($query,array_values($values));
         
         if($result){
@@ -62,4 +54,34 @@ class Database{
             return false;
         }
     }
+
+    public function update($where,$values){
+        $fields = array_keys($values);
+        //Montar query
+        $query = 'UPDATE ' . $this->table .' SET ' .implode('=?,',$fields). '=? WHERE ' .$where;
+
+        $result = $this->execute($query,array_values($values));
+        
+        return true;
+    }
+
+    public function select($where = null,$order = null,$limit = null, $fields = '*'){
+            //montando a query
+        $where = strlen($where) ? 'WHERE ' . $where : '';
+        $order = strlen($order) ? 'ORDER BY ' . $order : '';
+        $limit = strlen($limit) ? 'LIMIT ' . $limit : '';
+
+        $query = 'SELECT '.$fields. ' FROM ' .$this->table. ' '.$where;
+        //SELECT * FROM pessoa;
+        return $this->execute($query);
+    }
+
+
+    public function delete($where){
+        $sql = 'DELETE FROM '.$this->table.' WHERE '.$where;
+        $result = $this->execute($sql);
+        return true;
+    }
+
+
 }
