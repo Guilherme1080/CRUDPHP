@@ -2,10 +2,10 @@
 
 class Database{
     public $conn;
-    public string $local="localhost";
+    public string $local="10.38.0.125";
     public string $db="crudphp";
-    public string $user = "root";
-    public string $password = "";
+    public string $user = "devweb";
+    public string $password = "suporte@22";
     public $table;
 
 
