@@ -41,8 +41,8 @@ botao_cadastrar.addEventListener('click',function(event){
         });
         let res = await dados_php.json();
         if(res.status == 200){
-            fechaModal()
             chamaModalok()
+            fechaModal()
             ok.addEventListener('click',function(event){
                 event.preventDefault()
                 fechaModalok()

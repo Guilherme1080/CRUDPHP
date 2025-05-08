@@ -54,7 +54,7 @@
 
     input[type="submit"],
     input[type="reset"],
-    input[type="button"] {
+    input[type="button"]{
         padding: 12px;
         border: none;
         border-radius: 8px;
@@ -199,7 +199,29 @@
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
 }
-
+button.listar{
+    padding: 3px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color: #38b0a0;
+}
+button.listar a{
+    text-decoration: none;
+    color: white;
+}
+button.listar:hover{
+    background-color: #039985;
+}
+a.sla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: auto;    
+}
 </style>
 <body>
     <h1>Cadastro de Produtos</h1>
@@ -216,6 +238,9 @@
         </select>
         <input type="submit" id="cadastrar" name="cadastrar" value="Cadastrar">
         <input type="reset" id="cancelar" name="cancelar" value="Cancelar">
+        <button class="listar">
+            <a class="sla" href="listar_produto.html">Listar Produtos</a>
+        </button>
     </form>
     <div id="modal" class="oculta">
         <h1>Deseja Cadastrar?</h1>
