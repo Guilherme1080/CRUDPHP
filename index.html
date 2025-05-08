@@ -53,7 +53,8 @@
     }
 
     input[type="submit"],
-    input[type="reset"] {
+    input[type="reset"],
+    input[type="button"] {
         padding: 12px;
         border: none;
         border-radius: 8px;
@@ -67,6 +68,7 @@
         color: white;
     }
 
+
     input[type="submit"]:hover {
         background-color: #218838;
     }
@@ -78,6 +80,14 @@
 
     input[type="reset"]:hover {
         background-color: #c82333;
+    }
+    input[type="button"] {
+        background-color: #34808c;
+        color: white;
+    }
+    input[type="button"]:hover {
+        background-color: #1a7b89;
+        color: white;
     }
 
     #modal {
@@ -198,14 +208,12 @@
         <input type="text" id="desc" name="desc" placeholder="Digite a descrição: ">
         <input type="number" id="quantidade" name="quantidade" placeholder="Quantidade:">
         <input type="text" id="preco" name="preco" placeholder="R$">
-
         <select name="tipo" id="tipo">
             <option value="Limpeza">Limpeza</option>
             <option value="eletronico">Eletônicos</option>
             <option value="moveis">Móveis</option>
             <option value="info">Informática</option>
         </select>
-
         <input type="submit" id="cadastrar" name="cadastrar" value="Cadastrar">
         <input type="reset" id="cancelar" name="cancelar" value="Cancelar">
     </form>

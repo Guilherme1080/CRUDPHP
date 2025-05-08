@@ -6,12 +6,12 @@ var ok = document.getElementById('ok')
 var modalok = document.getElementById('modal_ok');
 
 function chamaModalok(){
-    modal.classList.remove('oculta_ok')
-    modal.classList.add('chama_ok')
+    modalok.classList.remove('oculta_ok')
+    modalok.classList.add('chama_ok')
 }
 function fechaModalok(){
-    modal.classList.remove('chama_ok')
-    modal.classList.add('oculta_ok')
+    modalok.classList.remove('chama_ok')
+    modalok.classList.add('oculta_ok')
 }
 function chamaModal(){
     modal.classList.remove('oculta')
@@ -39,10 +39,14 @@ botao_cadastrar.addEventListener('click',function(event){
             method:'POST',
             body: forms
         });
-        let response = await dados_php.json();
-
-        if(response.status == 200){
+        let res = await dados_php.json();
+        if(res.status == 200){
+            fechaModal()
             chamaModalok()
+            ok.addEventListener('click',function(event){
+                event.preventDefault()
+                fechaModalok()
+            })
         }
     })
 })
