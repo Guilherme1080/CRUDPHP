@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>listar</h1>
+<body onload='load_table()'>
+    <table id='tabela'>
+        <h1>listar</h1>
+        <thead>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Tipo</th>
+        </thead>
+        <tbody id="dados">
+        </tbody>
+    </table>
+
+
+    <script src="./js/load_table.js"></script>
 </body>
 </html>

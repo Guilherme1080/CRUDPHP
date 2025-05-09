@@ -1,5 +1,5 @@
 <?php
-require '../Entity/Produto.php';
+require_once '../Entity/Produto.php';
 
 if(isset($_POST['nome'])){
 

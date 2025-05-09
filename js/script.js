@@ -23,6 +23,8 @@ function fechaModal(){
     modal.classList.add('oculta')
 }
 
+
+
 botao_cadastrar.addEventListener('click',function(event){
 
     event.preventDefault();
