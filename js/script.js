@@ -37,6 +37,7 @@ botao_cadastrar.addEventListener('click',function(event){
             method:'POST',
             body: forms
         });
+
         let response = await dados_php.json();
 
         if(response.status == 200){
