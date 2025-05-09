@@ -142,54 +142,11 @@
 
 .chama {
     visibility: visible;
-    opacity: 1;
 }
 
 .oculta {
     visibility: hidden;
-    opacity: 0;
 }
-#modal_ok{
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    color: #333;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 350px;
-    z-index: 999;
-    transition: opacity 0.3s ease;
-    border: 2px solid #0077cc;
-}
-.oculta_ok {
-    visibility: hidden;
-    opacity: 0;
-}
-.chama_ok {
-    visibility: visible;
-    opacity: 1;
-}
-#ok{
-    background-color: #0077cc;
-    color: white;
-}
-#botoes_ok button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
 </style>
 <body>
     <h1>Cadastro de Produtos</h1>
@@ -214,12 +171,6 @@
         <div id="botoes">
             <button id="yes">Sim</button>
             <button id="nao">Não</button>
-        </div>
-    </div>
-    <div id="modal_ok" class="oculta_ok">
-        <h1>Cadastrado com sucesso</h1>
-        <div id="botoes_ok">
-            <button id="ok">Ok</button>
         </div>
     </div>
     <script src="js/script.js"></script>
