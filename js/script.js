@@ -1,7 +1,10 @@
 var botao_yes = document.getElementById('yes');
 var botao_cadastrar = document.getElementById('cadastrar');
 var modal = document.getElementById('modal');
+var modalok = document.getElementById('modal_ok');
 var botao_nao = document.getElementById('nao')
+var ok = document.getElementById('ok')
+
 
 function chamaModalok(){
     modalok.classList.remove('oculta_ok')
@@ -37,20 +40,15 @@ botao_cadastrar.addEventListener('click',function(event){
             method:'POST',
             body: forms
         });
-
-        let response = await dados_php.json();
-
-        if(response.status == 200){
-            console.log("oii")
         let res = await dados_php.json();
         if(res.status == 200){
             chamaModalok()
-            fechaModal()
+            fechaModal()    
             ok.addEventListener('click',function(event){
                 event.preventDefault()
                 fechaModalok()
             })
         }
-    })
-})
+    });
+});
 
