@@ -53,7 +53,8 @@
     }
 
     input[type="submit"],
-    input[type="reset"] {
+    input[type="reset"],
+    input[type="button"]{
         padding: 12px;
         border: none;
         border-radius: 8px;
@@ -67,6 +68,7 @@
         color: white;
     }
 
+
     input[type="submit"]:hover {
         background-color: #218838;
     }
@@ -78,6 +80,14 @@
 
     input[type="reset"]:hover {
         background-color: #c82333;
+    }
+    input[type="button"] {
+        background-color: #34808c;
+        color: white;
+    }
+    input[type="button"]:hover {
+        background-color: #1a7b89;
+        color: white;
     }
 
     #modal {
@@ -147,6 +157,71 @@
 .oculta {
     visibility: hidden;
 }
+<<<<<<< HEAD
+=======
+#modal_ok{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #333;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 350px;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+    border: 2px solid #0077cc;
+}
+.oculta_ok {
+    visibility: hidden;
+    opacity: 0;
+}
+.chama_ok {
+    visibility: visible;
+    opacity: 1;
+}
+#ok{
+    background-color: #0077cc;
+    color: white;
+}
+#botoes_ok button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+button.listar{
+    padding: 3px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color: #38b0a0;
+}
+button.listar a{
+    text-decoration: none;
+    color: white;
+}
+button.listar:hover{
+    background-color: #039985;
+}
+a.sla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: auto;    
+}
 </style>
 <body>
     <h1>Cadastro de Produtos</h1>
@@ -155,16 +230,17 @@
         <input type="text" id="desc" name="desc" placeholder="Digite a descrição: ">
         <input type="number" id="quantidade" name="quantidade" placeholder="Quantidade:">
         <input type="text" id="preco" name="preco" placeholder="R$">
-
         <select name="tipo" id="tipo">
             <option value="Limpeza">Limpeza</option>
             <option value="eletronico">Eletônicos</option>
             <option value="moveis">Móveis</option>
             <option value="info">Informática</option>
         </select>
-
         <input type="submit" id="cadastrar" name="cadastrar" value="Cadastrar">
         <input type="reset" id="cancelar" name="cancelar" value="Cancelar">
+        <button class="listar">
+            <a class="sla" href="listar_produto.html">Listar Produtos</a>
+        </button>
     </form>
     <div id="modal" class="oculta">
         <h1>Deseja Cadastrar?</h1>

@@ -3,6 +3,17 @@ var botao_cadastrar = document.getElementById('cadastrar');
 var modal = document.getElementById('modal');
 var botao_nao = document.getElementById('nao')
 
+<<<<<<< HEAD
+=======
+function chamaModalok(){
+    modalok.classList.remove('oculta_ok')
+    modalok.classList.add('chama_ok')
+}
+function fechaModalok(){
+    modalok.classList.remove('chama_ok')
+    modalok.classList.add('oculta_ok')
+}
+>>>>>>> a9ee05f3699e8e5240596a4174fc812b8bae6c0a
 function chamaModal(){
     modal.classList.remove('oculta')
     modal.classList.add('chama')
@@ -29,10 +40,21 @@ botao_cadastrar.addEventListener('click',function(event){
             method:'POST',
             body: forms
         });
+<<<<<<< HEAD
         let response = await dados_php.json();
 
         if(response.status == 200){
             console.log("oii")
+=======
+        let res = await dados_php.json();
+        if(res.status == 200){
+            chamaModalok()
+            fechaModal()
+            ok.addEventListener('click',function(event){
+                event.preventDefault()
+                fechaModalok()
+            })
+>>>>>>> a9ee05f3699e8e5240596a4174fc812b8bae6c0a
         }
     })
 })
