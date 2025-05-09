@@ -37,12 +37,10 @@ botao_cadastrar.addEventListener('click',function(event){
             method:'POST',
             body: forms
         });
-<<<<<<< HEAD
         let response = await dados_php.json();
 
         if(response.status == 200){
             console.log("oii")
-=======
         let res = await dados_php.json();
         if(res.status == 200){
             chamaModalok()
@@ -51,7 +49,6 @@ botao_cadastrar.addEventListener('click',function(event){
                 event.preventDefault()
                 fechaModalok()
             })
->>>>>>> a9ee05f3699e8e5240596a4174fc812b8bae6c0a
         }
     })
 })
